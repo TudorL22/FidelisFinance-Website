@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fidelis Financial Advising oferă consultanță financiară personalizată pentru credite, economisire, investiții și planuri de pensie. Descoperă soluții simple, sigure și fără comisioane ascunse.">
+  <title>Fidelis Financial Advising - consultanta si planificare financiara personalizata</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon2.png') }}" type="image/png">
+  <script src="https://kit.fontawesome.com/e2d632ae98.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="{{ url_for('home') }}" id="FinExpert"><h1>FidelisFinance</h1></a>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      <nav id="navMenu">
+        <ul>
+          <li id="despre"><a href="{{ url_for('despre') }}">Despre</a></li>
+          <li id="servicii"><a href="{{ url_for('servicii') }}">Servicii</a></li>
+          <li id="contact"><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero fade-in">
+    <h2>Baicea George-Augustin - Consultant Financiar Personal</h2>
+    <p>"Nu trebuie sa fii expert în bani. Asta e treaba mea"</p>
+    <p><i class="fa-solid fa-lock"></i> Siguranță. <i class="fa-solid fa-magnifying-glass"></i> Claritate. <i class="fa-solid fa-chart-column"></i> Viitor.</p>
+  </section>
+
+  <section class="box fade-in">
+    <div class="content-box">
+      <h3 id="title1">Construiește-ți viitorul financiar cu încredere, alături de un specialist care te ghidează pas cu pas.</h3>
+      <h4 class="highlight-title">Ce facem pentru tine</h4>
+      <p class="intro">Indiferent unde te afli în viață, îti oferim un plan financiar personalizat, adaptat nevoilor și obiectivelor tale:</p>
+      <ul class="servicii-list">
+        <li><strong>Credite</strong> – Alegem împreună cele mai bune soluții de finanțare, fără capcane.</li>
+        <li><strong>Economisire inteligentă</strong> – Planuri clare și sustenabile, indiferent de venit.</li>
+        <li><strong>Viitorul copiilor</strong> – Educație, locuință, start financiar solid.</li>
+        <li><strong>Asigurări & Protecția familiei</strong> – Siguranță financiară în orice situație.</li>
+        <li><strong>Investiții sigure</strong> – Creștem banii tăi în mod controlat și fără riscuri inutile.</li>
+        <li><strong>Pensie privată & Planificare seniorală</strong> – Pensie demnă, fără griji.</li>
+        <li><strong>Achiziții imobiliare</strong> – De la vis la realitate, cu planificare strategică.</li>
+      </ul>
+      <h4 class="highlight-title"> De ce să lucrezi cu mine?</h4>
+      <ul class="avantaje-list">
+        <li> Experiență și colaborare cu o echipă de specialiști</li>
+        <li>Planuri personalizate, nu soluții generice</li>
+        <li>Consultanță clară, fără jargon complicat</li>
+        <li>Fără comisioane ascunse. Doar rezultate.</li>
+      </ul>
+
+      <div class="container1">
+        <div class="parent">
+          <div class="card">
+            <div class="content-box1">
+              <h1 class="card-title">Programează o discuție gratuită</h1>
+              <p class="card-content">Vrei să vezi cum ar putea arăta viitorul tău financiar?
+                Contactează-mă direct.
+                </p>
+                <a href="{{ url_for('contact') }}" class="see-more">Vezi mai multe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FidelisFinance.Toate drepturile rezervate.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

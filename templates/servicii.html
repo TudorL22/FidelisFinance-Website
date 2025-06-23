@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultanta Financiara-Despre</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_servicii.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon2.png') }}" type="image/png">
+    <script src="https://kit.fontawesome.com/e2d632ae98.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <a href="{{ url_for('home') }}" id="FinExpert"><h1>FidelisFinance</h1></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav id="navMenu">
+              <ul>
+                <li id="despre"><a href="{{ url_for('despre') }}">Despre</a></li>
+                <li id="servicii"><a href="{{ url_for('servicii') }}">Servicii</a></li>
+                <li id="contact"><a href="{{ url_for('contact') }}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+    </header>
+    <div class="services-wrapper">
+    <div class="services-card">
+    <section class="section-finante ">
+      <h2 class="slogan">„Finanțe clare. Decizii sigure. Viitor liniștit.”</h2>
+      <h3 class="subtitle">Consultanță Financiară Personalizată – Sprijin pentru Viitorul Tău Financiar</h3>
+    
+      <p class="alineat">Într-o lume în continuă schimbare, luarea unor decizii financiare corecte poate face diferența între nesiguranță și stabilitate. Rolul meu, ca consultant financiar, este să fiu alături de tine la fiecare pas, oferindu-ți sprijin concret și constant pentru a-ți atinge obiectivele financiare rapid, sigur și cât mai eficient.</p>
+    
+      <p class="alineat">Colaborez cu o echipă de specialiști din domenii complementare pentru a identifica cele mai potrivite soluții în funcție de nevoile, obiectivele și resursele tale. Fiecare client are un parcurs unic, iar strategia noastră este mereu personalizată, transparentă și orientată spre rezultate pe termen lung.</p>
+    
+      <h4 class="subtitle2">Ce soluții oferim:</h4>
+      <ul class="solutions">
+        <li><strong>Produse bancare și creditare</strong> – identificarea celor mai avantajoase opțiuni de credit, refinanțări, gestionarea datoriilor sau optimizarea portofoliului bancar.</li>
+        <li><strong>Economisire și investiții sigure</strong> – construim planuri financiare inteligente care asigură creșterea capitalului fără expunere la riscuri inutile.</li>
+        <li><strong>Planificarea viitorului copiilor</strong> – soluții financiare pentru educație, economii pe termen lung și un start solid în viață.</li>
+        <li><strong>Planificarea pensiei</strong> – strategii de economisire și protecție pentru o pensionare liniștită și independentă financiar.</li>
+        <li><strong>Asigurări de viață și protecție financiară</strong> – oferim siguranță pentru tine și cei dragi, indiferent de evenimentele neprevăzute ale vieții.</li>
+        <li><strong>Planificare imobiliară</strong> – sprijin în strângerea sumei necesare pentru achiziția unei locuințe, a unui teren sau a altor tipuri de proprietăți, în condiții avantajoase.</li>
+      </ul>
+    
+      <p class="alineat">Misiunea mea este clară: să construim împreună un drum financiar stabil și sustenabil, în care fiecare decizie luată este bine informată și orientată spre progres. Nu promovez riscuri inutile sau promisiuni goale, ci soluții solide, testate și adaptate situației tale reale.</p>
+    
+      <p class="alineat">Indiferent dacă vrei să economisești, să investești, să îți protejezi familia sau să faci pasul spre achiziția unei locuințe, sunt aici să te ghidez, să îți ofer claritate și să te încurajez să faci alegerile potrivite.</p>
+    
+      <p class="alineat"><strong>Împreună putem transforma planurile în realitate.</strong></p>
+    </section>
+  </div>
+</div>
+    
+
+    <footer>
+        <p>&copy; 2025 FidelisFinance. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+    // Meniu toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    // Fade-in animatie on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+    
+</body>
+</html>

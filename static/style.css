@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;500;700;800;900;1000&display=swap");
+
+.container1{
+    padding: 50px 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-wrap: wrap;
+    font-family: "Nunito", sans-serif;
+}
+
+.parent{
+    height: 400px;
+    width: 300px;
+    padding: 20px;
+    perspective: 1000px;
+}
+
+.card{
+    padding-top: 100px;
+    transform-style: preserve-3d;
+    background-image: url("pexels-yankrukov-8866726.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.card:hover{
+    background-position: 80% 20%;
+    transform: rotate3d(0.5,1,0,30deg);
+}
+
+.content-box1{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: #0073ffec 0px 20px 50px -25px;
+    transition: all 0.5s ease-in-out;
+    padding: 50px 25px 25px 25px;
+    transform-style: preserve-3d;
+}
+
+.card-title{
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px,0px,20px);
+}
+
+.card-title:hover{
+    transform: translate3d(0px, 0px, 50px);
+}
+
+.card-content{
+    padding-top: 15px;
+    font-size: 12px;
+    color: #b9b9b9;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px,0px,20px);
+
+}
+
+.card-content:hover{
+    transform: translate3d(0px,0px,50px);
+}
+
+.see-more{
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #0088ff;
+    padding-top: 15px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px,0px,20px);
+
+}
+
+.see-more:hover{
+    transform: translate3d(0px,0xp,50px);
+}
+
+
+@keyframes slideUP {
+    from {
+        opacity: 0.3;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.highlight-title {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #1a237e;
+    text-align: left;
+  }
+  
+  .intro {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .servicii-list,
+  .avantaje-list {
+    padding-left: 25px;
+    color: #333;
+    font-size: 17px;
+    list-style: none;
+  }
+  
+  .servicii-list li::before,
+  .avantaje-list li::before {
+    content: "✔ ";
+    color: #3949ab;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .servicii-list li,
+  .avantaje-list li {
+    margin-bottom: 10px;
+  }
+
+
+.fa-solid fa-lock{
+    color: black;
+}
+
+#introducere{
+    text-align: left;
+    color: #3949ab;
+}
+
+#sec-int{
+    text-align: justify;
+    font-size: 18px;
+    padding: 10px;
+    text-indent: 2em;
+    color: black;
+    font-weight: bold;
+}
+
+#title1{
+    text-align: left;
+    color: #3949ab;
+}
+
+#lista{
+    text-align: justify;
+    font-size: 18px;
+    padding: 10px;
+
+}
+
+ul#lista li::marker {
+  color: #3949ab; 
+}
+
+ul#lista li {
+  color: black; 
+}
+#FinExpert {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+#FinExpert:hover {
+    color: #aab6fe;
+    transform: scale(1.08);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-image: url('finance-8041770_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: slideUP 1.4s ease-in-out forwards;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    margin-top: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.content-box {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+header {
+    background-color: #1a237e;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+/* START MENIU MOBIL ACTUALIZAT */
+nav {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    background-color: #1a237e;
+    border-radius: 6px;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    min-width: 150px;
+    max-width: 200px;
+}
+
+nav.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+nav ul li a {
+    color: #fff !important;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background-color: #3949ab !important;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none !important;
+    }
+    
+    nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none !important;
+        box-shadow: none;
+        padding: 0;
+        gap: 25px;
+        min-width: auto;
+        max-width: none;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        padding: 10px 20px !important;
+        font-size: 16px !important;
+    }
+
+    nav ul li a:hover {
+        transform: scale(1.05);
+    }
+}
+/* END MENIU MOBIL ACTUALIZAT */
+
+.hero {
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #3f51b5;
+}
+
+.hero h2 {
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.content {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.content h2 {
+    margin-bottom: 15px;
+    color: #1a237e;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #1a237e;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .box {
+        margin-top: 20px;
+        padding: 20px 10px;
+    }
+
+    .content {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}

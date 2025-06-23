@@ -1,0 +1,300 @@
+/* Reset & animație inițială */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes slideUP {
+    from {
+        opacity: 0.3;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+#title1{
+    text-align: justify;
+
+}
+
+#text{
+    text-align: left;
+
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    min-height: calc(100vh - 160px);
+}
+
+.about-card {
+    background-color: #ffffff;
+    padding: 50px 40px;
+    max-width: 900px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideUP 1.4s ease-in-out forwards;
+}
+
+.about-title {
+    font-size: 36px;
+    color: #1a237e;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background-color: #3949ab;
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    text-indent: 2em;
+    margin-bottom: 30px;
+}
+
+/* Link logo */
+#FinExpert {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+#FinExpert:hover {
+    color: #aab6fe;
+    transform: scale(1.08);
+}
+
+/* Body fără imagine de fundal */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-image: url('finance-8041770_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: slideUP 1.4s ease-in-out forwards;
+}
+
+/* Box conținut alb transparent */
+.box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    margin-top: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.content-box {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header și container */
+header {
+    background-color: #1a237e;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Meniu mobil (inițial ascuns) */
+nav {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #1a237e !important;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    z-index: 1000;
+}
+
+/* Meniu activ */
+nav.active {
+    display: flex;
+}
+
+/* Elemente din meniu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #3949ab !important;
+}
+
+/* Buton mobil */
+.menu-toggle {
+    font-size: 28px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Conținut secțiune Despre */
+.about-content {
+    width: 100%;
+    min-height: calc(100vh - 160px);
+    background-color: #ffffff;
+    padding: 80px 40px;
+    animation: slideUP 1.4s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-content h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-align: center;
+}
+
+.about-content p {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #1a237e;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* =======================
+   MEDIA QUERIES
+======================= */
+
+/* Desktop */
+@media (min-width: 768px) {
+    nav {
+        display: flex !important;
+        position: static;
+        background: none !important;
+        box-shadow: none;
+        padding: 0;
+        z-index: auto;
+    }
+
+    nav ul {
+        display: flex; /* Adăugat */
+        flex-direction: row; /* Asigură dispunerea orizontală */
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    nav ul li a {
+        color: white !important;
+        padding: 10px 15px;
+        transition: background-color 0.3s; /* Adăugat pentru tranziție fluidă */
+    }
+
+    /* AICI modific culoarea hover pentru toate paginile */
+    nav ul li a:hover {
+        background-color: #3949ab !important; /* Schimbă această valoare pentru altă culoare */
+        border-radius: 6px;
+    }
+}
+
+/* Meniu mobil pentru ecrane mici */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 40px 20px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 18px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .box {
+        margin-top: 20px;
+        padding: 20px 10px;
+    }
+}
+
+nav ul li:first-child a {
+    font-size: 1.2em; /* Mărime ușor mai mare pentru emoji */
+    padding: 10px 15px; /* Ajustare padding pentru aspect proporțional */
+    display: flex;
+    align-items: center;
+}
+
+/* Pentru versiunea mobilă */
+@media (max-width: 768px) {
+    nav ul li:first-child a {
+        padding: 6px 12px; /* Identic cu celelalte elemente */
+        font-size: 1.1em;
+    }
+}

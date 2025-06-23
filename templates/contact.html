@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultanta Financiara-Despre</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_contact.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon2.png') }}" type="image/png">
+    <script src="https://kit.fontawesome.com/e2d632ae98.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <a href="{{ url_for('home') }}" id="FinExpert"><h1>FidelisFinance</h1></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav id="navMenu">
+              <ul>
+                <li id="despre"><a href="{{ url_for('despre') }}">Despre</a></li>
+                <li id="servicii"><a href="{{ url_for('servicii') }}">Servicii</a></li>
+                <li id="contact"><a href="{{ url_for('contact') }}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+    </header>
+
+    <div class="contact-wrapper">
+    <div class="contact-card">
+    <section class="section-contact fade-in" id="contact">
+      <h2 class="contact-title"><i class="fa-solid fa-phone"></i> Contact</h2>
+    
+      <p class="alineat">
+        Ai întrebări sau dorești o consultație financiară personalizată?<br>
+        Completează formularul de mai jos sau folosește datele de contact pentru a stabili o discuție. 
+        Sunt aici să te ajut să îți atingi obiectivele financiare rapid, sigur și eficient.
+      </p>
+    
+      <div class="contact-info">
+        <p><strong>Telefon:</strong> <a href="tel:+40741949358">0741 949 358</a></p>
+        <p><strong>Email:</strong> <a href="mailto:fidelis.finance2025@yahoo.com">fidelis.finance2025@yahoo.com</a></p>
+      </div>
+    
+      <hr class="separator">
+    
+      <h3 class="form-title"><i class="fa-solid fa-calendar-days"></i> Programează o întâlnire</h3>
+    
+      <p class="alineat">Vrei să discutăm despre situația ta financiară?<br>Trimite-mi un mesaj și te voi contacta în cel mai scurt timp!</p>
+    
+      <form class="contact-form" action="{{ url_for('submit') }}" method="POST">
+        <label for="name">Nume complet</label>
+        <input type="text" id="name" name="nume" required>
+    
+        <label for="email">Adresă de email</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="phone">Număr de telefon</label>
+        <input type="tel" id="phone" name="phone" required>
+    
+        <label for="message">Mesaj / Subiectul discuției</label>
+        <textarea id="message" name="mesaj" rows="5" ></textarea>
+    
+        <button type="submit">Trimite mesajul</button>
+      </form>
+    </section>
+  </div>
+</div>
+    
+
+    <footer>
+        <p>&copy; 2025 FidelisFinance. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+    // Meniu toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    // Fade-in animatie on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+    
+</body>
+</html>

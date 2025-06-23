@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultanta Financiara-Despre</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_despre.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon2.png') }}" type="image/png">
+    <script src="https://kit.fontawesome.com/e2d632ae98.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <a href="{{ url_for('home') }}" id="FinExpert"><h1>FidelisFinance</h1></a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav id="navMenu">
+              <ul>
+                <li id="despre"><a href="{{ url_for('despre') }}">Despre</a></li>
+                <li id="servicii"><a href="{{ url_for('servicii') }}">Servicii</a></li>
+                <li id="contact"><a href="{{ url_for('contact') }}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+    </header>
+    
+    <main class="about-wrapper fade-in">
+      <div class="about-card">
+        <h2 class="about-title">Despre mine</h2>
+        <div class="underline"></div>
+    
+        <p class="about-text">
+          &emsp;Sunt <strong>Baicea George-Augustin</strong> și cred cu tărie că fiecare decizie financiară ar trebui să fie luată cu încredere și fără stres. De aceea, îmi dedic cariera să-i ajut pe oameni să navigheze mai ușor prin lumea creditelor, asigurărilor și investițiilor — fără termeni complicați, fără presiune, doar <em>soluții clare și eficiente</em>.
+        </p>
+    
+        <p class="about-text">
+          &emsp;Cu o abordare personalizată, pun accent pe nevoile reale ale fiecărui client. Fie că ești la început de drum și cauți un credit avantajos pentru locuința ta, ai nevoie de o asigurare care să-ți ofere liniște sau vrei să faci investiții cât mai sigure, sunt aici să te ghidez pas cu pas.
+        </p>
+    
+        <p class="about-text">
+          &emsp;Lucrez transparent, explic totul într-un mod accesibil și îți ofer mereu opțiuni potrivite contextului tău. Scopul meu nu este doar să-ți ofer servicii, ci să construim o relație bazată pe încredere și rezultate pe termen lung.
+        </p>
+    
+        <p class="about-text">
+          &emsp;Dacă vrei un partener de drum în gestionarea finanțelor, care să-ți ofere sprijin real și sfaturi pe înțelesul tău, te invit să stăm de vorbă.
+        </p>
+    
+      </div>
+    </main>
+    
+    
+    
+
+    <footer>
+        <p>&copy; 2025 FidelisFinance. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+    // Meniu toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+
+    // Fade-in animatie on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+    
+</body>
+</html>
