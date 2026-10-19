@@ -48,4 +48,14 @@ FidelisFinance-Website/
 
 ## Screenshots
 
-<!-- Add screenshots of the home page (desktop and mobile) and the contact form here -->
+**Home page**
+
+![Home page](screenshots/home.png)
+
+**Contact page and form**
+
+![Contact page](screenshots/contact.png)
+
+**Mobile view with the navigation menu open**
+
+<img src="screenshots/mobile.png" alt="Mobile view" width="300">
